@@ -1,0 +1,249 @@
+ <ui:composition template="/template/master.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:define name="title">
+        .:Atención Reclamos :.
+    </ui:define>
+
+    <ui:define name="titleCont">
+        <span>Atención de Reclamo </span>
+    </ui:define>
+
+    <ui:define name="content">
+		<h:form>
+			
+			<div class="row">
+
+            	<div class="col-sm-2">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="codigo"
+                   					  	value="Código de Reclamo:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="codigo"
+                   						readonly="true"
+                   						styleClass="form-control"
+                   						value="#{reclamoMB.reclamoCliente.id_reclamo}"
+                   						maxlength="6"
+                   						label="codigo"/>
+               		</div>
+            	</div>
+			</div>
+			
+			<div class="row">
+
+            	<div class="col-sm-3">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="tipo_doc"
+                   					  	value="Tipo Documento:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="tipo_doc"
+                   						readonly="true"
+                   						styleClass="form-control"
+                   						value="#{reclamoMB.reclamoCliente.tipo_doc}"
+                   						maxlength="6"
+                   						label="tipo_doc"/>
+               		</div>
+            	</div>
+            	
+            	<div class="col-sm-3">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="documento"
+                   					  	value="Documento:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="documento"
+                   						readonly="true"
+                   						styleClass="form-control"
+                   						value="#{reclamoMB.reclamoCliente.doc}"
+                   						maxlength="6"
+                   						label="documento"/>
+               		</div>
+            	</div>
+			</div>
+			
+			<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="cliente"
+                   					  	value="Cliente:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="cliente"
+                   						readonly="true"
+                   						styleClass="form-control"
+                   						value="#{reclamoMB.reclamoCliente.nombres} #{reclamoMB.reclamoCliente.apellido_paterno} #{reclamoMB.reclamoCliente.apellido_materno}"
+                   						maxlength="300"
+                   						label="cliente"/>
+               		</div>
+            	</div>
+			</div>
+			
+			<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="domicilio"
+                   					  	value="Domicilio:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="domicilio"
+                   						readonly="true"
+                   						styleClass="form-control"
+                   						value="#{reclamoMB.reclamoCliente.domicilio}"
+                   						maxlength="300"
+                   						label="domicilio"/>
+               		</div>
+            	</div>
+			</div>
+			
+			<div class="row">
+
+            	<div class="col-sm-3">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="telefono"
+                   					  	value="Telefono:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="telefono"
+                   						readonly="true"
+                   						styleClass="form-control"
+                   						value="#{reclamoMB.reclamoCliente.telefono}"
+                   						maxlength="300"
+                   						label="telefono"/>
+               		</div>
+            	</div>
+			</div>
+			
+			<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="email"
+                   					  	value="Email:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="email"
+                   						readonly="true"
+                   						styleClass="form-control"
+                   						value="#{reclamoMB.reclamoCliente.email}"
+                   						maxlength="300"
+                   						label="email"/>
+               		</div>
+            	</div>
+			</div>
+			
+			<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="descripcion"
+                   					  	value="Descripción:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputTextarea 	rows="6" 
+                   							cols="33" 	
+                   							autocomplete="off"
+                   							id="descripcion"
+                   							readonly="true"
+                   							styleClass="form-control"
+                   							value="#{reclamoMB.reclamoCliente.descripcion}"
+                   							maxlength="500"
+                   							label="descripcion"/>
+               		</div>
+            	</div>
+			</div>
+			
+			<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="solucion"
+                   					  	value="Solución:"
+                   					  	styleClass="control-label"/>
+
+                   		<p:inputTextarea 	rows="6" 
+                   							cols="33" 	
+                   							autocomplete="off"
+                   							id="solucion"	
+                   							styleClass="form-control"
+                   							value="#{reclamoMB.reclamoCliente.solucion}"
+                   							maxlength="500"
+                   							label="solucion"/>
+               		</div>
+            	</div>
+			</div>
+			
+			<div class="row">
+
+            	<div class="col-sm-3">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="estado"
+                   					  	value="Estado:"
+                   					  	styleClass="control-label"/>
+
+                   		<!-- <p:inputText 	autocomplete="off"
+                   						id="estado"
+                   						styleClass="form-control"
+                   						value="#{reclamoMB.reclamoCliente.estado}"
+                   						maxlength="300"
+                   						label="estado"/> -->
+                   		<p:selectOneMenu id="estado" value="#{reclamoMB.reclamoCliente.estado}" style="width:200px">
+           					<f:selectItem itemLabel="Seleccione estado" itemValue="" />
+            				<f:selectItem itemLabel="En Pendiente" itemValue="En Pendiente" />
+            				<f:selectItem itemLabel="Atendido" itemValue="Atendido" />
+            				<f:selectItem itemLabel="Por Atender" itemValue="Por Atender" /> 	
+        				</p:selectOneMenu>
+               		</div>
+            	</div>
+			</div>
+    		
+    		<div class="row">
+    	         <div class="col-sm-8 text-center" >
+            			<div class="form-group box-main-btn">
+
+            					<p:commandButton 	value="Guardar"
+                									actionListener="#{reclamoMB.grabar()}"
+                									styleClass="btn btn-primary"
+                                  					icon="icon-save"
+                									ajax="true"
+                									update="growl,codigo,estado" />
+                									
+                				<p:commandButton 	value="Enviar Email"
+                									action="#{reclamoMB.enviarEmail()}"
+                									styleClass="btn btn-default"
+                									ajax="true" />
+                									
+                				<p:commandButton 	value="Atrás"
+                									action="#{reclamoMB.atras()}"
+                									styleClass="btn btn-default"
+                									ajax="false" />
+
+            			</div>
+            	</div>
+            </div>            
+            <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+		</h:form>
+    </ui:define>
+
+    <ui:define name="footerCont">
+        <script type="text/javascript" charset="utf-8">
+        $("#sidebar-1").removeClass("active");
+       	$("#sidebar-2").removeClass("active");
+       	$("#sidebar-3").addClass("active");
+        </script>
+    </ui:define>
+</ui:composition>

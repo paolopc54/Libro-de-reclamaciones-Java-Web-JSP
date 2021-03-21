@@ -1,0 +1,233 @@
+ <ui:composition template="/template/master2.xhtml"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:define name="title">
+        .:Libro de Reclamaciones:.
+    </ui:define>
+
+    <ui:define name="titleCont">
+        <span>Libro de Reclamaciones </span>
+    </ui:define>
+
+    <ui:define name="content">
+		<h:form>
+		<p:fieldset legend="Identificación del Usuario"
+					styleClass="null">	
+			<div class="row">
+
+            	<div class="col-sm-4">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="tipo_doc"
+                   					  	value="Tipo Documento:"
+                   					  	styleClass="control-label"/>
+                   					  	
+                   		<p:selectOneMenu id="tipo_doc" value="#{clienteMB.reclamoCliente.tipo_doc}" style="width:200px">
+           					<f:selectItem itemLabel="--Seleccione--" itemValue="" />
+            				<f:selectItem itemLabel="DNI" itemValue="DNI" />
+            				<f:selectItem itemLabel="RUC" itemValue="RUC" />
+            				<f:selectItem itemLabel="Pasaporte" itemValue="Pasaporte" /> 
+        				</p:selectOneMenu>
+
+                   		<!-- <p:inputText 	autocomplete="off"
+                   						id="tipo_doc"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.tipo_doc}"
+                   						label="tipo_doc"/> -->
+               		</div>
+            	</div>
+            	
+            	<div class="col-sm-4">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="documento"
+                   				  		value="Documento:"
+                   				  		styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="documento"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.doc}"
+                   						maxlength="16"
+                   						label="documento"/>
+               		</div>
+            	</div>  
+            	
+			</div>
+
+    		
+    		<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="nombre"
+                   				  		value="Nombres:"
+                   				  	styleClass="control-label"/>
+
+                   		<p:inputText 	autocomplete="off"
+                   						id="nombre"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.nombres}"
+                   						maxlength="150"
+                   						label="nombre"/>
+               		</div>
+            	</div>
+    		</div>
+    		
+    		
+ 			<div class="row">
+
+            	<div class="col-sm-4">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="apellido_paterno"
+                   				  		value="Apellido Paterno:"
+                   				  		styleClass="control-label"/>
+
+                   		<p:inputText	autocomplete="off"
+                   						id="apellido_paterno"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.apellido_paterno}"
+                   						maxlength="50"
+                   						label="apellido_paterno"/>
+               		</div>
+            	</div>
+            	
+            	<div class="col-sm-4">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="apellido_materno"
+                   				  		value="Apellido Materno:"
+                   				  		styleClass="control-label"/>
+
+                   		<p:inputText	autocomplete="off"
+                   						id="apellido_materno"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.apellido_materno}"
+                   						maxlength="50"
+                   						label="apellido_materno"/>
+               		</div>
+            	</div>
+    		</div>
+    	
+    		
+    		<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="domicilio"
+                   				  		value="Domicilio:"
+                   				  		styleClass="control-label"/>
+
+                   		<p:inputText	autocomplete="off"
+                   						id="domicilio"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.domicilio}"
+                   						maxlength="300"
+                   						label="domicilio"/>
+               		</div>
+            	</div>
+    		</div>
+    		
+    		
+    		<div class="row">
+
+            	<div class="col-sm-4">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="telefono"
+                   				  		value="Teléfono:"
+                   				  		styleClass="control-label"/>
+
+                   		<p:inputText	autocomplete="off"
+                   						id="telefono"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.telefono}"
+                   						maxlength="9"
+                   						label="telefono"/>
+               		</div>
+            	</div>
+       
+    		</div>
+    		
+    		<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="email"
+                   				  		value="Email:"
+                   				  		styleClass="control-label"/>
+
+                   		<p:inputText	autocomplete="off"
+                   						id="email"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.email}"
+                   						maxlength="300"
+                   						label="email"/>
+               		</div>
+            	</div>
+       
+    		</div>
+    	</p:fieldset>	
+    		
+    	<p:fieldset 
+    			legend="Identificación de la atención brindada"
+    			styleClass="null">	
+    		<div class="row">
+
+            	<div class="col-sm-8">
+               		<div class="form-group">
+                   		<h:outputLabel 	for="descripcion"
+                   				  		value="Descripcion:"
+                   				  		styleClass="control-label"/>
+                   				  		
+                   		<p:inputTextarea 	rows="6" 
+                   							cols="33" 	
+                   							autocomplete="off"
+                   							id="descripcion"	
+                   							styleClass="form-control"
+                   							value="#{clienteMB.reclamoCliente.descripcion}"
+                   							maxlength="2000"
+                   							label="descripcion"/>
+
+                   		<!-- <p:inputText	autocomplete="off"
+                   						id="descripcion"
+                   						styleClass="form-control"
+                   						value="#{clienteMB.reclamoCliente.descripcion}"
+                   						maxlength="300"
+                   						label="descripcion"/> -->
+               		</div>
+            	</div>
+       
+    		</div>
+    		
+    	</p:fieldset>
+    	
+    		<div class="row">
+    	         <div class="col-sm-8 text-center" >
+            			<div class="form-group box-main-btn">
+
+            					<p:commandButton 	value="Enviar"
+                									actionListener="#{clienteMB.grabar()}"
+                									styleClass="btn btn-primary "
+                                  					icon="icon-save"
+                									ajax="true"
+                									update="growl, tipo_doc, documento" />
+                									
+                				<p:commandButton 	value="Nuevo Reclamo"
+                									action="#{clienteMB.cancelar()}"
+                									styleClass="btn btn-default"
+                									ajax="false" />
+                									
+                				
+            			</div>
+            	</div>
+            </div>
+            
+            <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+			
+			
+		</h:form>
+	</ui:define>
+
+    
+</ui:composition>

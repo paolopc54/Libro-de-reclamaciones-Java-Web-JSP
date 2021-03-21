@@ -1,0 +1,18 @@
+CREATE VIEW V_RECLAMO_CLIENTE
+AS
+    SELECT    
+        R.ID_RECLAMO,
+        R.DESCRIPCION,
+        R.ESTADO,
+        C.ID_CLIENTE,
+        C.TIPO_DOCUMENTO,
+        C.DOCUMENTO,
+        C.NOMBRES,
+        C.APELLIDO_PATERNO,
+        C.APELLIDO_MATERNO,
+        C.DOMICILIO,
+        C.TELEFONO,
+        C.EMAIL
+    FROM 
+        RECLAMO R INNER JOIN CLIENTE C
+        ON R.ID_CLIENTE = C.ID_CLIENTE;
